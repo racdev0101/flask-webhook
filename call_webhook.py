@@ -37,7 +37,7 @@ def receive_webhook():
         f"• Delivery Time: {delivery_time}\n"
         f"• Buyer: {name_location}\n"
         f"• Contact: {contact_details}\n"
-        f"• Contact: {lead_qualification}\n"
+        f"• Lead Qualification: {lead_qualification}\n"
     )
 
     # Send to Google Chat
@@ -53,5 +53,6 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
