@@ -26,6 +26,7 @@ def receive_webhook():
     product_details   = analysis.get("product_details", {}).get("value")
     product_quantity  = analysis.get("product_quantity", {}).get("value")
     delivery_time     = analysis.get("delivery_time", {}).get("value")
+    lead_qualification     = analysis.get("lead_qualification", {}).get("value")
 
     # Prepare message
     text = (
@@ -35,7 +36,8 @@ def receive_webhook():
         f"• Quantity: {product_quantity}\n"
         f"• Delivery Time: {delivery_time}\n"
         f"• Buyer: {name_location}\n"
-        f"• Contact: {contact_details}"
+        f"• Contact: {contact_details}\n"
+        f"• Contact: {lead_qualification}\n"
     )
 
     # Send to Google Chat
@@ -51,4 +53,5 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
